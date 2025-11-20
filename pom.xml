@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.7</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath /> 
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>SUPNUM_TD1_23044</artifactId>
@@ -49,19 +49,19 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.7.7</version>
 		</dependency>
-		<!-- Spring Boot Web Services SOAP -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
 
-		<!-- Génération WSDL (facultatif mais dans le cours) -->
+		
 		<dependency>
 			<groupId>wsdl4j</groupId>
 			<artifactId>wsdl4j</artifactId>
 		</dependency>
 
-		<!-- JAXB (XML <-> Java) -->
+		
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>

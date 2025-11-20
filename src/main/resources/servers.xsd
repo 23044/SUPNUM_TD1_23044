@@ -4,7 +4,7 @@
            xmlns:tns="http://supnum.com/server"
            elementFormDefault="qualified">
 
-    <!-- Type Server -->
+    
     <xs:complexType name="Server">
         <xs:sequence>
             <xs:element name="id" type="xs:long" minOccurs="0"/>
@@ -14,7 +14,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- createServer -->
+    
     <xs:element name="createServerRequest">
         <xs:complexType>
             <xs:sequence>
@@ -32,7 +32,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- listServers -->
+    
     <xs:element name="listServersRequest" type="xs:anyType"/>
 
     <xs:element name="listServersResponse">
@@ -43,7 +43,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- getServerStatus -->
+    
     <xs:element name="getServerStatusRequest">
         <xs:complexType>
             <xs:sequence>
