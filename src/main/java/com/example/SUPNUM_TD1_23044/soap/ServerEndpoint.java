@@ -1,16 +1,12 @@
 package com.example.SUPNUM_TD1_23044.soap;
 
+import com.example.SUPNUM_TD1_23044.model.Server;
+import com.example.SUPNUM_TD1_23044.service.ServerService;
+import com.example.SUPNUM_TD1_23044.soap.dto.*;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-
-import com.example.SUPNUM_TD1_23044.model.Server;
-import com.example.SUPNUM_TD1_23044.service.ServerService;
-import com.example.SUPNUM_TD1_23044.soap.dto.CreateServerRequest;
-import com.example.SUPNUM_TD1_23044.soap.dto.*;
-import com.example.SUPNUM_TD1_23044.soap.dto.StartServerRequest;
-import com.example.SUPNUM_TD1_23044.soap.dto.StartServerResponse;
 
 import java.util.List;
 
@@ -25,11 +21,18 @@ public class ServerEndpoint {
         this.serverService = serverService;
     }
 
-    
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createServerRequest")
     @ResponsePayload
     public CreateServerResponse create(@RequestPayload CreateServerRequest request) {
-        Server server = new Server(request.getName(), request.getIpAddress());
+
+        // System.out.println("SOAP CreateServerRequest -> name=" + request.getName()
+        //         + ", ipAddress=" + request.getIpAddress());
+
+        Server server = new Server();
+        server.setName(request.getName());
+        server.setIpAddress(request.getIpAddress());
+        server.setStatus(request.getStatus());
+
         Server created = serverService.createServer(server);
 
         CreateServerResponse response = new CreateServerResponse();
@@ -61,6 +64,7 @@ public class ServerEndpoint {
     @ResponsePayload
     public StartServerResponse start(@RequestPayload StartServerRequest request) {
         Server started = serverService.startServer(request.getId());
+
         StartServerResponse response = new StartServerResponse();
         response.setServer(toSoap(started));
         return response;

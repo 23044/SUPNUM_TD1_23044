@@ -3,26 +3,24 @@ package com.example.SUPNUM_TD1_23044.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "server")
 public class Server {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "ip_address")
     private String ipAddress;
 
-    private Boolean status = false;
+    @Column(name = "status")
+    private Boolean status ;
 
-    public Server() {}
-
-    public Server(String name, String ipAddress) {
-        this.name = name;
-        this.ipAddress = ipAddress;
-        this.status = false;
+    public Server() {
     }
-
 
     public Long getId() {
         return id;
@@ -52,7 +50,7 @@ public class Server {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 }

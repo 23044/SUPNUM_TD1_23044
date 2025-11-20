@@ -5,10 +5,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(
-        name = "startServerRequest",
-        namespace = "http://supnum.com/server"
-)
+@XmlRootElement(name = "startServerRequest", namespace = "http://supnum.com/server")
 public class StartServerRequest {
 
     private Long id;

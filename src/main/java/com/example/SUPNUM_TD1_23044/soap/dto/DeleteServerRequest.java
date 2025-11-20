@@ -5,10 +5,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(
-        name = "deleteServerRequest",
-        namespace = "http://supnum.com/server"
-)
+@XmlRootElement(name = "deleteServerRequest", namespace = "http://supnum.com/server")
 public class DeleteServerRequest {
 
     private Long id;

@@ -20,7 +20,9 @@ public class ServerService {
 
     public Server createServer(Server server) {
         server.setId(null);
-        server.setStatus(false);
+        server.setStatus(server.getStatus());
+        // server.setStatus(false);
+
         return serverRepository.save(server);
     }
 
